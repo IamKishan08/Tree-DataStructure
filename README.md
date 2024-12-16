@@ -2,6 +2,49 @@
 
 A tree is a hierarchical data structure consisting of nodes, where each node has a value and references to its child nodes. The topmost node is called the **root**, and the nodes without children are called **leaf nodes**.
 
+To define a tree in Java, you need to create a Node class to represent the nodes of the tree and a Tree class to represent the structure and manage operations like insertion, traversal, etc.
+
+### Defining a Node Class
+Each node in a tree typically contains:
+
+   - A value (data stored in the node).
+
+  -   References to its children (left and right for binary trees).
+
+```bash
+class Node {
+    int value;   // Data stored in the node
+    Node left;   // Reference to the left child
+    Node right;  // Reference to the right child
+
+    // Constructor to initialize a node
+    public Node(int value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+```
+
+### Creating a Tree Class
+  The Tree class will manage the root of the tree and any operations like insertion and traversal.
+##### Example : Basic Tree Structure
+
+```bash 
+class BinaryTree {
+    Node root;  // The root node of the tree
+
+    // Constructor to initialize an empty tree
+    public BinaryTree() {
+        root = null;
+    }
+
+    // Method to add nodes or perform tree operations (can be extended)
+}
+
+```
+
 ## Key Concepts in Tree Data Structure
 
  - **Root Node:** The topmost node of a tree.

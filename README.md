@@ -58,3 +58,93 @@ Examples:
 
 ### 5. Trie
    A special tree used for string operations, e.g., autocomplete systems.
+
+## Types of Tree Traversals
+
+### 1. Pre-Order Traversal (Root → Left → Right)
+
+   - Visit the root node.
+
+   - Recursively traverse the left subtree.
+
+   - Recursively traverse the right subtree.
+```bash 
+// Pre-order Traversal (Root -> Left -> Right)
+void preOrder(Node node) {
+    if (node == null) return;
+
+    System.out.print(node.value + " "); // Visit the root
+    preOrder(node.left);               // Traverse the left subtree
+    preOrder(node.right);              // Traverse the right subtree
+}
+```
+
+### 2. In-Order Traversal (Left → Root → Right)
+
+- Recursively traverse the left subtree.
+
+- Visit the root node.
+
+- Recursively traverse the right subtree. 
+
+```bash
+// In-order Traversal (Left -> Root -> Right)
+void inOrder(Node node) {
+    if (node == null) return;
+
+    inOrder(node.left);                // Traverse the left subtree
+    System.out.print(node.value + " "); // Visit the root
+    inOrder(node.right);               // Traverse the right subtree
+}
+
+```
+
+### 3. Post-Order Traversal (Left → Right → Root)
+- Recursively traverse the left subtree.
+
+- Recursively traverse the right subtree.
+
+- Visit the root node.
+
+```bash
+// Post-order Traversal (Left -> Right -> Root)
+void postOrder(Node node) {
+    if (node == null) return;
+
+    postOrder(node.left);              // Traverse the left subtree
+    postOrder(node.right);             // Traverse the right subtree
+    System.out.print(node.value + " "); // Visit the root
+}
+
+```
+
+### 4. Level-Order Traversal (Breadth-First Traversal)
+
+
+   - Visit nodes level by level from top to bottom, left to right.
+
+   - Requires a queue to keep track of nodes at each level.
+
+```bash
+import java.util.LinkedList;
+import java.util.Queue;
+
+void levelOrder(Node root) {
+    if (root == null) return;
+
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+
+    while (!queue.isEmpty()) {
+        Node current = queue.poll();  // Get the front node in the queue
+        System.out.print(current.value + " "); // Visit the node
+
+        if (current.left != null) queue.add(current.left);   // Add left child
+        if (current.right != null) queue.add(current.right); // Add right child
+    }
+}
+
+```
+
+
+
